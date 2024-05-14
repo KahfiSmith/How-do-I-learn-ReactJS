@@ -3,38 +3,36 @@ import Button from "../Elements/Button";
 const CardProduct = (props) => {
   const { children } = props;
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md mx-4">
       {children}
     </div>
   );
 };
 
-const Header = () => {
+const Header = (props) => {
+  const { image } = props;
   return (
     <a href="#">
-      <img src="/images/lishiya.jpeg" alt="" className="p-8 rounded-lg" />
+      <img src={image} alt="" className="p-8 rounded-lg" />
     </a>
   );
 };
 
-const Body = () => {
+const Body = (props) => {
+  const { title, children } = props;
   return (
     <div className="px-8 pb-8">
-      <h5 className="text-xl font-semibold text-gray-700">Li Shiya</h5>
-      <p className="text-sm text-gray-700 tracking-wide">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis natus
-        assumenda perspiciatis possimus fugiat cupiditate a blanditiis veniam,
-        hic non earum inventore necessitatibus beatae omnis minus laborum
-        dignissimos explicabo vitae!
-      </p>
+      <h5 className="text-xl font-semibold text-gray-700">{title}</h5>
+      <p className="text-sm text-gray-700 tracking-wide">{children}</p>
     </div>
   );
 };
 
-const Footer = () => {
+const Footer = (props) => {
+  const { price } = props;
   return (
     <div className="flex justify-between px-8 pb-8 items-center">
-      <span className="text-xl font-bold text-gray-700">Rp 100.000,00</span>
+      <span className="text-xl font-bold text-gray-700">{price}</span>
       <Button variant="bg-blue-600">Add to cart</Button>
     </div>
   );

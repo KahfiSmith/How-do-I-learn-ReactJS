@@ -3,8 +3,7 @@ const Label = (props) => {
   return (
     <label
       htmlFor={htmlFor}
-      className="block text-slate-700 text-sm font-medium mb-2"
-    >
+      className="block text-slate-700 text-sm font-medium mb-2">
       {children}
     </label>
   );

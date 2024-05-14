@@ -1,7 +1,7 @@
 import Button from "../Elements/Button";
 import InputForm from "../Elements/Input";
 
-const LoginForm = (props) => {
+const FormLogin = () => {
   return (
     <form action="#">
       <InputForm type="email" name="email" placehoder="example@gmail.com" label="Email" />
@@ -11,4 +11,4 @@ const LoginForm = (props) => {
   );
 };
 
-export default LoginForm;
+export default FormLogin;

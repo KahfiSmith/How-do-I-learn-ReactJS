@@ -7,7 +7,7 @@ const LoginPage = () => {
     <AuthLayouts title="Login">
       <FormLogin />
       <p className="mt-5 text-sm text-center">
-        Don't have an account yet?{" "}
+      Don&#39;t have an account yet?{" "}
         <Link to="/register" className="text-blue-600 font-bold">
           Sign Up
         </Link>

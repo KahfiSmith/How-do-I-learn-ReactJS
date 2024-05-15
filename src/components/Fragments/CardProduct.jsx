@@ -12,9 +12,7 @@ const CardProduct = (props) => {
 const Header = (props) => {
   const { image } = props;
   return (
-    <a href="#">
-      <img src={image} alt="" className="p-8 rounded-lg" />
-    </a>
+    <div className="p-8"><img src={image} alt="" className="rounded-lg" /></div>
   );
 };
 
@@ -22,7 +20,7 @@ const Body = (props) => {
   const { title, children } = props;
   return (
     <div className="px-8 pb-8">
-      <h5 className="text-xl font-semibold text-gray-700">{title}</h5>
+      <h5 className="text-xl font-bold text-gray-600">{title}</h5>
       <p className="text-sm text-gray-700 tracking-wide">{children}</p>
     </div>
   );

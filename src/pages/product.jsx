@@ -1,5 +1,6 @@
 import Button from "../components/Elements/Button";
 import CardProduct from "../components/Fragments/CardProduct";
+import Counter from "../components/Fragments/Counter";
 
 const products = [
   {
@@ -35,9 +36,10 @@ const ProductPage = () => {
   }
   return (
     <>
-    <div className="flex justify-end items-center bg-blue-400 gap-6 text-white font-semibold p-4 text-xl">{email}<Button variant="bg-blue-600" onClick={handleLogout}>Logout</Button>
+    <div className="flex justify-end items-center bg-blue-400 gap-6 text-white font-semibold p-5 text-xl">{email}<Button variant="bg-blue-600" className="pr-10" onClick={handleLogout}>Logout</Button>
     </div>
     <div className="flex justify-center py-5">
+      <div className="w-3/4 flex flex-wrap">
       {products.map((product) => (
         <CardProduct key={product.id}>
           <CardProduct.Header image={product.image} />
@@ -47,6 +49,13 @@ const ProductPage = () => {
           <CardProduct.Footer price={product.price} />
         </CardProduct>
       ))}
+      </div>
+      <div className="w-1/4">
+
+      </div>
+    </div>
+    <div className="flex justify-center mb-4">
+      <Counter/>
     </div>
     </>
   );

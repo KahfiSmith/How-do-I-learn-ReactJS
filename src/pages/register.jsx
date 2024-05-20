@@ -8,7 +8,7 @@ const RegisterPage = () => {
       <FormRegister/>
       <p className="mt-5 text-sm text-center">
         Have an account yet?{" "}
-        <Link to="/Login" className="text-blue-600 font-bold">
+        <Link to="/login" className="text-blue-600 font-bold">
           Sign In
         </Link>
       </p>

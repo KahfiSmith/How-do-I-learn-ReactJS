@@ -3,7 +3,7 @@ import Button from "../Elements/Button";
 const CardProduct = (props) => {
   const { children } = props;
   return (
-    <div className="w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow-md mx-4 flex flex-col justify-between my-2">
+    <div className="w-full max-w-xs bg-secondary border border-gray-600 rounded-lg shadow-md mx-4 flex flex-col justify-between my-2 text-white">
       {children}
     </div>
   );
@@ -20,8 +20,8 @@ const Body = (props) => {
   const { title, children } = props;
   return (
     <div className="px-8 pb-8 h-full">
-      <h5 className="text-xl font-bold text-gray-600">{title}</h5>
-      <p className="text-sm text-gray-700 tracking-wide">{children}</p>
+      <h5 className="text-xl font-bold">{title}</h5>
+      <p className="text-sm tracking-wide">{children}</p>
     </div>
   );
 };
@@ -30,8 +30,8 @@ const Footer = (props) => {
   const { price, id, handleAddtoCart } = props;
   return (
     <div className="flex justify-between px-8 pb-8 items-center">
-      <span className="text-xl font-bold text-gray-700">Rp {price.toLocaleString("id-ID", {styles: "currency", currency: "IDR"})}</span>
-      <Button variant="bg-blue-600" onClick={() => handleAddtoCart(id)}>Add to cart</Button>
+      <span className="text-xl font-bold">Rp {price.toLocaleString("id-ID", {styles: "currency", currency: "IDR"})}</span>
+      <Button variant="bg-primary" onClick={() => handleAddtoCart(id)}>Add to cart</Button>
     </div>
   );
 };

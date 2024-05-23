@@ -91,11 +91,11 @@ const ProductPage = () => {
   };
   return (
     <>
-      <div className="bg-[#fffbfb]">
-        <div className="flex justify-end items-center bg-blue-400 gap-6 text-white font-semibold p-5 text-xl">
+      <div className="bg-background text-color min-h-screen">
+        <div className="flex justify-end items-center bg-secondary gap-6 font-semibold p-5 text-xl">
           {email}
           <Button
-            variant="bg-blue-600"
+            variant="bg-primary"
             className="pr-10"
             onClick={handleLogout}
           >
@@ -118,8 +118,8 @@ const ProductPage = () => {
               </CardProduct>
             ))}
           </div>
-          <div className="w-1/4 text-slate-600">
-            <h1 className="text-xl font-semibold mb-2 text-blue-500 ml-5">
+          <div className="w-1/4">
+            <h1 className="text-xl font-semibold mb-2 ml-5">
               Cart
             </h1>
             <table className="text-left table-auto border-separate border-spacing-x-5">

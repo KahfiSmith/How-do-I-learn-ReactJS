@@ -3,7 +3,7 @@ import Button from "../Elements/Button";
 const CardProduct = (props) => {
   const { children } = props;
   return (
-    <div className="w-full max-w-xs bg-secondary border border-gray-600 rounded-lg shadow-md mx-4 flex flex-col justify-between my-2 text-white">
+    <div className="w-full max-w-xs bg-secondary border border-gray-600 rounded-lg shadow-md mx-4 flex flex-col justify-between my-2 text-white mb-6">
       {children}
     </div>
   );
@@ -12,7 +12,9 @@ const CardProduct = (props) => {
 const Header = (props) => {
   const { image } = props;
   return (
-    <div className="p-8"><img src={image} alt="" className="rounded-lg" /></div>
+    <div className="p-8">
+      <img src={image} alt="" className="rounded-lg h-64 w-full object-cover" />
+    </div>
   );
 };
 
@@ -20,8 +22,8 @@ const Body = (props) => {
   const { title, children } = props;
   return (
     <div className="px-8 pb-8 h-full">
-      <h5 className="text-xl font-bold">{title}</h5>
-      <p className="text-sm tracking-wide">{children}</p>
+      <h5 className="text-xl font-bold">{title.substring(0, 18)}...</h5>
+      <p className="text-sm tracking-wide">{children.substring(0, 100)}...</p>
     </div>
   );
 };
@@ -30,8 +32,13 @@ const Footer = (props) => {
   const { price, id, handleAddtoCart } = props;
   return (
     <div className="flex justify-between px-8 pb-8 items-center">
-      <span className="text-xl font-bold">Rp {price.toLocaleString("id-ID", {styles: "currency", currency: "IDR"})}</span>
-      <Button variant="bg-primary" onClick={() => handleAddtoCart(id)}>Add to cart</Button>
+      <span className="text-xl font-bold">
+        ${" "}
+        {price.toLocaleString("id-ID", { styles: "currency", currency: "USD" })}
+      </span>
+      <Button variant="bg-primary" onClick={() => handleAddtoCart(id)}>
+        Add to cart
+      </Button>
     </div>
   );
 };

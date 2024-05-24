@@ -1,18 +1,26 @@
 import Button from "../components/Elements/Button";
 import CardProduct from "../components/Fragments/CardProduct";
-import Counter from "../components/Fragments/Counter";
 import { useEffect, useRef, useState } from "react";
 import { getProduct } from "../services/product.service";
-
-const email = localStorage.getItem("email");
+import { getUsername } from "../services/auth.service";
 
 const ProductPage = () => {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [products, setProduct] = useState([]);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart")) || []);
+  }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setUsername(getUsername(token));
+    } else {
+      window.location.href = "/login";
+    }
   }, []);
 
   useEffect(() => {
@@ -70,15 +78,14 @@ const ProductPage = () => {
   }, [cart]);
 
   const handleLogout = () => {
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
+    localStorage.removeItem("token");
     window.location.href = "/login";
   };
   return (
     <>
       <div className="bg-background text-color min-h-screen">
         <div className="flex justify-end items-center bg-secondary gap-6 font-semibold p-5 text-xl">
-          {email}
+          {username}
           <Button variant="bg-primary" className="pr-10" onClick={handleLogout}>
             Logout
           </Button>
@@ -157,9 +164,6 @@ const ProductPage = () => {
             </table>
           </div>
         </div>
-        {/* <div className="flex justify-center mb-4">
-        <Counter />
-      </div> */}
       </div>
     </>
   );

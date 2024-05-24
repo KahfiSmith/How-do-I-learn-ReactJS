@@ -11,8 +11,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div className="flex justify-center min-h-screen items-center">
-        <p className="textslate-500 font-semibold">Hello World</p>
+      <div className="flex justify-center min-h-screen items-center bg-primary">
+        <p className="text-color text-4xl font-semibold">Hello World</p>
       </div>
     ),
     errorElement: <ErrorPage />,
